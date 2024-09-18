@@ -95,6 +95,9 @@ a {
     flex: 1;
     /* border: 1px green solid; */
 }
+.choice > div > span:nth-child(3){
+    visibility: hidden;
+}
 .topic_choice{
     display: flex;
     justify-content: center;

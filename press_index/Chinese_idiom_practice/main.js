@@ -16,6 +16,7 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
         var f = (e)=>{
             e.currentTarget.classList.add('wrong')
             choice_arr[ans].classList.add('correct')
+            e.currentTarget.children[2].style.visibility = 'visible'
         }
         topic.children[0].innerText = '0.'
         topic.children[1].innerText = "輸入題目後，按下一題"
@@ -43,6 +44,7 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
                 choice_arr.forEach((item)=>{
                     item.classList.remove('correct')
                     item.classList.remove('wrong')
+                    item.children[2].style.visibility = "hidden"
                     item.removeEventListener('click', f)
                 })
                 count++
@@ -55,6 +57,7 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
                 // console.log(topic.children[1].innerText = data[temp][0])
                 var random_choice = Math.floor(Math.random() * 4)
                 choice_arr[random_choice].children[1].innerText = data[temp][1]
+                choice_arr[random_choice].children[2].innerText = data[temp][0]
                 ans = random_choice
                 console.log(random_choice, ans)
                 var count_choice = 1
@@ -79,6 +82,7 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
                     topic_vis[data[random_topic][1]] = 1
                     count_choice++
                     choice_arr[random_choice].children[1].innerText = data[random_topic][1]
+                    choice_arr[random_choice].children[2].innerText = data[random_topic][0]
                 }
                 choice_arr.forEach((item)=>{
                     item.addEventListener('click', f)
