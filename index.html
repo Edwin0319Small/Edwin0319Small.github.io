@@ -2,18 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./src/main.css">
+    <title>Static JSON</title>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <div class="cards">
-
+    <div class="container">
+        <div class="topic">
+            <span>0.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident architecto quasi</span>
+        </div>
+        <div class="choice">
+            <div>
+                <span>A.</span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span>B.</span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span>C.</span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span>D.</span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="topic_choice">
+            <button id="next">下一題</button>
+            <span>0/0</span>
+        </div>
+        <div class="init">
+            <input type="text" value="題目開始序數">
+            <input type="text" value="題目結束序數">
+            <button>確定</button>
+            <span>開始請大於0，結束請小於40，題目至少四題。</span>
+        </div>
     </div>
-    <a href="./press_index/">高二的美術作業</a>
-    我不想搞layout啊
-    <a href="./press_index/Chinese_idiom_practice/index.html">名句練習</a>
 </body>
-<script src="./src/main.js"></script>
+<script src="main.js"></script>
 </html>
