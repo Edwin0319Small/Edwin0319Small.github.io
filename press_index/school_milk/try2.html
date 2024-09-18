@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+    <title>hermes成果展示</title>
+    <style>
+        /* CSS for body content centering */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .body {
+            position: relative;
+            margin: 0 auto; /* Center the body content */
+            max-width: 960px;
+            height: auto; /* Set height to auto */
+            overflow: hidden; /* Hide overflow content */
+        }
+        /* Rest of your CSS styles */
+        @media (max-width: 768px) {
+            .body {
+                width: 100%;
+            }
+        }
+        @media (min-width: 768px) {
+            .body {
+                width: 50%;
+            }
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            z-index: -1;
+        }
+        video {
+            position: absolute;
+            bottom: 0; /* Place the video at the bottom of the container */
+            left: 0;
+            width: 90%;
+            z-index: 1; /* Set a higher z-index to ensure the video displays above the image */
+            padding: 10% 5%;
+        }
+        img.try{
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <!-- <img src="./WechatIMG267.jpg" alt=""> -->
+        <img src="./WechatIMG266.jpg">
+        <img src="./WechatIMG12015.jpg" class="try">
+        <video controls width="250">
+            <source src="./269_1709161543.mp4" type="video/mp4" />
+        </video>
+    </div>
+</body>
+</html>
