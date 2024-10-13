@@ -23,8 +23,8 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
         ans_count.innerText = "0/0"
         bt_right.style.visibility = "hidden"
         init.children[2].addEventListener('click', ()=>{
-            if(init.children[0].value >= 1 && init.children[0].value <= 106) minimum = parseInt(init.children[0].value)
-            if(init.children[1].value >= 1 && init.children[1].value <= 106) maximum = parseInt(init.children[1].value)
+            if(init.children[0].value >= 1 && init.children[0].value <= 134) minimum = parseInt(init.children[0].value)
+            if(init.children[1].value >= 1 && init.children[1].value <= 134) maximum = parseInt(init.children[1].value)
             if(minimum == 0 || maximum == 0 || maximum - minimum + 1 < 4){
                 init.children[3].innerText += "請重輸"
             }
