@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="page-home" class="page">
+            <div class="home-container">
+                <div class="country-name">Macau</div>
+                <div class="card-container">
+                    <div class="arrow left-arrow" onclick="prevCard()">←</div>
+                    <div class="card">
+                        <div class="date">2024-10-27</div>
+                        <div class="weather_image">
+                            <img src="sunny.svg" style="width: 60vw; height: 30vh;">
+                        </div>
+                        <div class="weather">Good</div>
+                        <div class="temperature">220°C</div>
+                
+                
+                    </div>
+                    <div class="card">
+                        <div class="date">2024-10-28</div>
+                        <div class="weather_image">
+                            <img src="sunny.svg" style="width: 60vw; height: 30vh;">
+                        </div>
+                        <div class="weather">Good</div>
+                        <div class="temperature">220°C</div>
+                
+                
+                    </div>
+                    <div class="card">
+                        <div class="date">2024-10-29</div>
+                        <div class="weather_image">
+                            <img src="sunny.svg" style="width: 60vw; height: 30vh;">
+                        </div>
+                        <div class="weather">Good</div>
+                        <div class="temperature">220°C</div>
+                
+                
+                    </div>
+                    <div class="card">
+                        <div class="date">2024-10-27</div>
+                        <div class="weather_image">
+                            <img src="sunny.svg" style="width: 60vw; height: 30vh;">
+                        </div>
+                        <div class="weather">Good</div>
+                        <div class="temperature">220°C</div>
+                
+                
+                    </div>
+                    <div class="card">
+                        <div class="date">2024-10-27</div>
+                        <div class="weather_image">
+                            <img src="sunny.svg" style="width: 60vw; height: 30vh;">
+                        </div>
+                        <div class="weather">Good</div>
+                        <div class="temperature">220°C</div>
+                
+                
+                    </div>
+                    <div class="card">
+                        <div class="date">2024-10-27</div>
+                        <div class="weather_image">
+                            <img src="sunny.svg" style="width: 60vw; height: 30vh;">
+                        </div>
+                        <div class="weather">Good</div>
+                        <div class="temperature">220°C</div>
+                
+                
+                    </div>
+                    <div class="card">
+                        <div class="date">2024-10-27</div>
+                        <div class="weather_image">
+                            <img src="sunny.svg" style="width: 60vw; height: 30vh;">
+                        </div>
+                        <div class="weather">Good</div>
+                        <div class="temperature">220°C</div>
+                
+                
+                    </div>
+                    <div class="arrow right-arrow" onclick="nextCard()">→</div>
+                </div>
+                <div class="dots-container">
+                    <span class="dot" onclick="setCard(0)"></span>
+                    <span class="dot" onclick="setCard(1)"></span>
+                    <span class="dot" onclick="setCard(2)"></span>
+                    <span class="dot" onclick="setCard(3)"></span>
+                    <span class="dot" onclick="setCard(4)"></span>
+                    <span class="dot" onclick="setCard(5)"></span>
+                    <span class="dot" onclick="setCard(6)"></span>
+                </div>
+            </div>
+        </div>
+        <div id="page-setting" class="page">
+            <title>Weather App</title>
+        </head>
+        <body>
+            <div class="container">
+                <h1 align="center" style="font-family: 'Times New Roman', Times, serif;">Choose Location</h1>
+                <div class="location-list">
+                    <div class="location-item MACAU" onclick="selectLocation(this)">Macao<img class="symbol" src="img/choose.gif" alt="chosen" align="right" style="width:4vw;height:4vh;"></div>
+                    <div class="location-item" onclick="selectLocation(this)">Hong Kong<img class="symbol" src="img/choose.gif" alt="chosen" align="right" style="width:4vw;height:4vh;"></div>
+                    <div class="location-item" onclick="selectLocation(this)">London<img class="symbol" src="img/choose.gif" alt="chosen" align="right" style="width:4vw;height:4vh;"></div>
+                    <div class="location-item" onclick="selectLocation(this)">Helsinki<img class="symbol" src="img/choose.gif" alt="chosen" align="right" style="width:4vw;height:4vh;"></div>
+                    <div class="location-item" onclick="selectLocation(this)">Beijing<img class="symbol" src="img/choose.gif" alt="chosen" align="right" style="width:4vw;height:4vh;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="settion">
+        <input type="radio" name="settion" id="home">
+        <label for="home" style="font-weight: bold;">Home</label>
+        <input type="radio" name="settion" id="setting">
+        <label for="setting" style="font-weight: bold;">Setting</label>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
