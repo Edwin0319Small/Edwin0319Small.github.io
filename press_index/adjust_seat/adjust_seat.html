@@ -9,12 +9,11 @@
     <style>
         body{
             padding: 5rem 0px;
+            display: relative;
+            height: fit-content;
         }
-        .my-gray{
-            background-color: darkgray;
-        }
-        body{
-            height: 100vh;
+        .font-red{
+            color: red !important;
         }
         .col{
             height: 6rem;
@@ -24,14 +23,35 @@
             align-items: center;
         }
         .big-side{
-            height: 100%;
+            height: fit-content;
         }
         .my-hidden{
             color: white;
         }
+        .btn-div{
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .btn-div button{
+            flex: 0 1 80%;
+            /* width: 80%; */
+        }
+        .header{
+            width: 100%;
+            height: 4rem;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        高三甲
+    </div>
     <div class="container-8 h-100 row justify-content-center gap-1">
         <div class="container col-5 big-side">
             <div class="row my-row">
@@ -98,8 +118,8 @@
             </div>
             </div>
     </div>
-    <div class="row">
-        <button type="button" class="btn btn-primary">查看全部</button>
+    <div class="btn-div">
+        <button type="button" class="btn btn-primary" mode="0">查看全部</button>
     </div>
 </body>
 <script src="./main.js"></script>
