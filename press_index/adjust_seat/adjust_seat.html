@@ -5,122 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S3A</title>
-    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
-    <style>
-        body{
-            padding: 5rem 0px;
-            display: relative;
-            height: fit-content;
-        }
-        .font-red{
-            color: red !important;
-        }
-        .col{
-            height: 6rem;
-            border: 1px solid black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .big-side{
-            height: fit-content;
-        }
-        .my-hidden{
-            color: white;
-        }
-        .btn-div{
-            margin-top: 5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .btn-div button{
-            flex: 0 1 80%;
-            /* width: 80%; */
-        }
-        .header{
-            width: 100%;
-            height: 4rem;
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
     <div class="header">
-        高三甲
+        <h1>S3A</h1>
     </div>
-    <div class="container-8 h-100 row justify-content-center gap-1">
-        <div class="container col-5 big-side">
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+    <div class="seat-container">
+        <div class="big-container">
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
+        </div>
+        <div class="big-container">
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="container col-5 big-side">
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
             </div>
-            <div class="row my-row">
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-                <div class="col my-hidden"></div>
-            </div>
-            </div>
+        </div>
     </div>
-    <div class="btn-div">
-        <button type="button" class="btn btn-primary" mode="0">查看全部</button>
+    <div class="lottery">
+        <button mode="0">開始抽籤</button>
+        <!-- <input type="text" placeholder="請輸入洗牌次數" oninput="value=value.replace(/[^\d]/g,'')"> -->
     </div>
 </body>
-<script src="./main.js"></script>
-</html>
+<script src="./main.js" type="module"></script>
+</html> 

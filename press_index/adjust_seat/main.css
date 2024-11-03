@@ -1,0 +1,99 @@
+/* @media screen and (min-width: 768px){
+    *{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 1024px){
+    *{
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 1280px){
+    *{
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 1440px){
+    *{
+        font-size: 24px;
+    }
+} */
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    height: 200vh;
+    width: 100vw;
+}
+
+.font-red{
+    color: red !important;
+}
+
+.header{
+    background-color: #71c4ef;
+    width: 100vw;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    color: white;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
+.header h1{
+    margin: 0px;
+    letter-spacing: 2rem;
+}
+
+.seat-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 5rem 0;
+    /* gap: 5rem; */
+}
+
+.big-container{
+    /* flex: 1 0 auto; */
+    width: 40%;
+}
+.row{
+    display: flex;
+    /* justify-content: stretch; */
+    flex: 1 0 auto;
+    margin-bottom: 1rem;
+}
+.seat{
+    /* width: 100px; */
+    flex: 1 0 auto;
+    height: 5rem;
+    /* min-width: 4rem; */
+    text-align: center;
+    width: 3rem;
+    border: 1px solid black;
+    color: white;
+}
+
+.lottery{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.lottery button{
+    width: 50%;
+    height: 3rem;
+    background-color: #71c4ef;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
