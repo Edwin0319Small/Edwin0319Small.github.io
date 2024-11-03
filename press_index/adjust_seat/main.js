@@ -20,7 +20,7 @@ my_row.forEach((row)=>{
     }
 })
 
-F.two_one_sit(my_row, arr_students, arr_gender)
+F.plan3(my_row, arr_students, arr_gender)
 
 let working = false
 button.addEventListener('click', ()=>{
@@ -37,12 +37,12 @@ button.addEventListener('click', ()=>{
 
             if(button.getAttribute('mode') == "1"){
                 button.setAttribute('mode', "0")
-                F.two_one_sit(my_row, arr_students, arr_gender)
+                F.plan3(my_row, arr_students, arr_gender)
                 button.innerText = "開始抽籤"
             }
             else{
                 button.setAttribute('mode', "1")
-                button.innerText = "重置坐位"
+                button.innerText = "重置座位"
             }
         }
         lucky()
