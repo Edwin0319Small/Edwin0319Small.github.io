@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sandra Haller's Portfolio - Frontend Developer and Designer">
+    <title>Sandra Haller - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="./src/favicon.ico">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/second_style.css">
+    <link rel="stylesheet" href="./src/libs/animate.css">
+</head>
+
+<body>
+    <div class="loading-block upperone">
+        <span>Hellow! It's me</span>
+    </div>
+    <div class="loading-block downone"></div>
+    <div class="mousePoint"></div>
+    <canvas id="myCanvas" resize></canvas>
+
+    <div class="container">
+        <header class="info-header init-Ref">
+            <nav class="info-header-nav">
+                <span class="info-header-nav-title-box">
+                    <span class="info-header-nav-title">Portfoliio</span>
+                </span>
+                <div class="info-header-nav-badge">
+                    <div data-bigdot="true" class="info-header-nav-badge-box">
+                        <img src="./src/imgs/cssda-special-kudos-black.png"
+                            alt="CSSDA Special Kudos Award Black Version">
+                        <img class="purple-badge" src="./src/imgs/cssda-special-kudos-purple.png"
+                            alt="CSSDA Special Kudos Award Purple Version">
+                    </div>
+                    <div class="info-header-nav-badge-switch">
+                        <!-- put input in label is same as 'for'. and only the first input can be checked -->
+                        <div data-bigdot="true">
+                            <label>
+                                <input type="checkbox" class="fakeCheckBox" aria-label="Switch theme mode">
+                                <div class="slider-bar" role="switch" aria-checked="false"></div>
+                            </label>
+                        </div>
+                        <div class="info-header-nav-badge-switch-text">
+                            <span class="switch-to-old" style="visibility: visible;">Switch to old school</span>
+                            <span class="no-more-old" style="visibility: hidden;">No more old school</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="info-header-text">
+                <div class="info-header-text-detail">
+                    <span>HI - </span>
+                    <span>I'M SANDRA, FRONTEND</span>
+                    <span>DEVELOPER AND DESIGNER.</span>
+                </div>
+                <div data-bigdot="true" class="info-header-text-more">more about me</div>
+            </div>
+            <div class="info-header-imgs">
+                <div class="info-header-imgs-box">
+                    <img loading="lazy" src="./src/imgs/sandra_haller-2.jpg" alt="Sandra Haller Portrait">
+                    <img src="./src/imgs/sandra_haller.jpg" alt="">
+                </div>
+                <div data-bigdot="true" class="info-header-imgs-rotate">
+                    <img class="info-header-imgs-rotate-arrow" src="./src/imgs/arrow.svg" alt="">
+                    <img class="info-header-imgs-rotate-circle" src="./src/imgs/circle-04.svg" alt="">
+                </div>
+            </div>
+        </header>
+        <main class="selected-works init-Ref">
+            <span class="selected-works-title">Selected Works</span>
+            <div class="works-container">
+                <!-- <div class="one-work">
+                    <div class="one-work-text-box">
+                        <span class="one-work-title">Recongroup</span>
+                        <span class="move-text">Corporate Design / Webdesign & Development</span>
+                    </div>
+                    <div class="circle-img">
+                        <img src="./src/imgs/recon.jpg" alt="">
+                    </div>
+                </div> -->
+
+                <!-- <div class="one-work">
+                    <div class="one-work-text-box">
+                        <span class="one-work-title">Glassland</span>
+                        <span class="move-text">Webdesign & Development</span>
+                    </div>
+                    <div class="circle-img">
+                        <img src="./src/imgs/gambswirt-screen-2.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="one-work">
+                    <div class="one-work-text-box">
+                        <span class="one-work-title">PEFC</span>
+                        <span class="move-text">Webdesign & Development</span>
+                    </div>
+                    <div class="circle-img">
+                        <img src="./src/imgs/pefc-sujet.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="one-work">
+                    <div class="one-work-text-box">
+                        <span class="one-work-title">Biosphere Lab Lungau</span>
+                        <span class="move-text">Webdesign & Development</span>
+                    </div>
+                    <div class="circle-img">
+                        <img src="./src/imgs/biosphere-lab-box.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="one-work">
+                    <div class="one-work-text-box">
+                        <span class="one-work-title">ZIID</span>
+                        <span class="move-text">Webdesign & Development</span>
+                    </div>
+                    <div class="circle-img">
+                        <img src="./src/imgs/ziid-flyer-2.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="one-work">
+                    <div class="one-work-text-box">
+                        <span class="one-work-title">Hotel Gambswirt</span>
+                        <span class="move-text">Webdesign & Development</span>
+                    </div>
+                    <div class="circle-img">
+                        <img src="./src/imgs/gambswirt-screen-2.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="one-work">
+                    <div class="one-work-text-box">
+                        <span class="one-work-title">More works</span>
+                        <span class="move-text">Webdesign & Development</span>
+                    </div>
+                    <div class="circle-img">
+                        <img src="./src/imgs/HBM-3.jpg" alt="">
+                    </div>
+                </div> -->
+            </div>
+        </main>
+        <footer class="footer init-Ref">
+            <span class="footer-title">Contact</span>
+            <div class="footer-info">
+                <div class="footer-info-left">
+                    <span>Sandra Haller</span>
+                    <span class="footer-info-left-hover">sandraahaller@gmail.com</span>
+                    <span class="footer-info-left-hover">Linkedin</span>
+                </div>
+                <div class="footer-info-right">
+                    <span>You want to know more about me?</span>
+                    <div class="footer-info-right-box">
+                        <span>Here are a few things I like</span>
+                        <span class="footer-info-right-icon"></span>
+                    </div>
+                    <!-- video without voice or set muted -->
+                    <video autoplay loop muted preload="none" src="./src/videos/things.mp4"></video>
+                </div>
+            </div>
+            <span class="footer-talk">let's talk</span>
+        </footer>
+    </div>
+
+</body>
+<script src="./src/libs/gsap.min.js" defer></script>
+<script src="./src/libs/jquery-3.7.1.js" defer></script>
+<script src="./src/libs/paper-full.js" defer></script>
+<script src="./src/main.js" type="module" defer></script>
+
+</html>

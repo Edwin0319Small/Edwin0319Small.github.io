@@ -13,7 +13,7 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
         var count = 0
         var random_topic
         var ans
-        var f = (e)=>{
+        var f = (e) => {
             e.currentTarget.classList.add('wrong')
             choice_arr[ans].classList.add('correct')
             e.currentTarget.children[2].style.visibility = 'visible'
@@ -22,33 +22,33 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
         topic.children[1].innerText = "輸入題目後，按下一題"
         ans_count.innerText = "0/0"
         bt_right.style.visibility = "hidden"
-        init.children[2].addEventListener('click', ()=>{
-            if(init.children[0].value >= 1 && init.children[0].value <= 400) minimum = parseInt(init.children[0].value)
-            if(init.children[1].value >= 1 && init.children[1].value <= 400) maximum = parseInt(init.children[1].value)
-            if(minimum == 0 || maximum == 0 || maximum - minimum + 1 < 4){
+        init.children[2].addEventListener('click', () => {
+            if (init.children[0].value >= 1 && init.children[0].value <= 400) minimum = parseInt(init.children[0].value)
+            if (init.children[1].value >= 1 && init.children[1].value <= 400) maximum = parseInt(init.children[1].value)
+            if (minimum == 0 || maximum == 0 || maximum - minimum + 1 < 4) {
                 init.children[3].innerText += "請重輸"
             }
-            else{
+            else {
                 init.style.visibility = "hidden"
                 bt_right.style.visibility = "visible"
             }
         })
-        bt_right.addEventListener('click', ()=>{
+        bt_right.addEventListener('click', () => {
             // console.log(minimum, maximum, typeof(minimum), typeof(maximum))
-            if(count < (maximum - minimum + 1)){
+            if (count < (maximum - minimum + 1)) {
                 random_topic = Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
-                while(vis_arr[random_topic]){
+                while (vis_arr[random_topic]) {
                     random_topic = Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
                     // console.log(random_topic)
                 }
-                choice_arr.forEach((item)=>{
+                choice_arr.forEach((item) => {
                     item.classList.remove('correct')
                     item.classList.remove('wrong')
                     item.children[2].style.visibility = "hidden"
                     item.removeEventListener('click', f)
                 })
                 count++
-                if(count == (maximum - minimum + 1)) bt_right.style.visibility = "hidden"
+                if (count == (maximum - minimum + 1)) bt_right.style.visibility = "hidden"
                 ans_count.innerText = count.toString() + '/' + (maximum - minimum + 1)
                 var temp = random_topic
                 vis_arr[temp] = 1
@@ -63,18 +63,18 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
                 var count_choice = 1
                 var choice_vis = [0, 0, 0, 0, 0]
                 var topic_vis = {}
-                for(let i = minimum; i <= maximum; i++) topic_vis[data[i][1]] = 0
+                for (let i = minimum; i <= maximum; i++) topic_vis[data[i][1]] = 0
                 topic_vis[data[temp][1]] = 1
                 choice_vis[random_choice] = 1
                 // console.log(topic_vis)
-                while(count_choice < 4){
-                    while(choice_vis[random_choice]){
+                while (count_choice < 4) {
+                    while (choice_vis[random_choice]) {
                         random_choice = Math.floor(Math.random() * 4)
                         // console.log("choice")
                     }
                     random_topic = Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
                     // console.log(topic_vis[data[random_topic][1]])
-                    while(topic_vis[data[random_topic][1]]){
+                    while (topic_vis[data[random_topic][1]]) {
                         random_topic = Math.floor(Math.random() * (maximum - minimum + 1) + minimum)
                         // console.log("topic")
                     }
@@ -84,7 +84,7 @@ fetch('./file.json') // Replace with the actual URL of your hosted JSON file
                     choice_arr[random_choice].children[1].innerText = data[random_topic][1]
                     choice_arr[random_choice].children[2].innerText = data[random_topic][0]
                 }
-                choice_arr.forEach((item)=>{
+                choice_arr.forEach((item) => {
                     item.addEventListener('click', f)
                 })
             }

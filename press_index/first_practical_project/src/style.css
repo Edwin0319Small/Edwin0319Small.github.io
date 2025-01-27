@@ -1,0 +1,600 @@
+*{
+    /* erase mouse */
+    cursor: none;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    --color: #dcff7d;
+}
+::selection{
+    background-color: var(--color);
+    color: aqua;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.display-none{
+    display: none;
+}
+
+/* loading */
+.loading-block{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* delay 1.5s to show the loading animation */
+    transition: transform 0.2s cubic-bezier(.77, 0, .175, 1) 1.5s;
+}
+.upperone{
+    background-color: white;
+    z-index: 110;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 100;
+}
+.downone{
+    background-color: var(--color);
+    z-index: 109;
+    transition-delay: 1.8s;
+}
+.loading-block-moveup{
+    transform: translateY(-100%);
+}
+.init-Ref{
+    opacity: 0;
+}
+
+/* relating to mouse style */
+/* avoid paint changing shape */
+canvas[resize]{
+    height: 100%;
+    width: 100%;
+    /* border: 10px solid red; */
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* cursor only can occur one element event, and this attribute avoid occur the closest element like this */
+    pointer-events: none;
+}
+
+.mousePoint{
+    height: 6px;
+    width: 6px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: 101;
+    pointer-events: none;
+}
+/* the element both contain mousePoint and bigDot */
+.mousePoint.bigDot{
+    height: 32px;
+    width: 32px;
+    background-color: var(--color);
+    /* as well as translate */
+    transition: all 0.3s ease;
+}
+
+/* content and structure */
+body{
+    /* 非衬线体 */
+    font-family: Helvetica, sans-serif;
+}
+
+.container{
+    /* border: 1px solid red; */
+    padding: 1.6vw 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 200px; */
+    gap: 16vh;
+}
+
+
+.info-header{
+    display: flex;
+    flex-direction: column;
+    /* gap: 100px; */
+    gap: 8vh;
+    width: 80%;
+}
+
+.info-header-nav{
+    display: flex;
+    justify-content: space-between;
+}
+.info-header-nav-title-box{
+    display: flex;
+    font-size: 2rem;
+    font-weight: 200;
+}
+.info-header-nav-badge{
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+.info-header-nav-badge-box{
+    position: relative;
+}
+.info-header-nav-badge-box > img{
+    width: 80px;
+}
+.purple-badge{
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.purple-badge:hover{
+    opacity: 1;
+}
+.slider-bar{
+    height: 36px;
+    width: 62px;
+    /* background-color: red; */
+    border: 2px solid dimgray;
+    border-radius: 20px;
+    position: relative;
+}
+.slider-bar::before{
+    content: "";
+    height: 32px;
+    width: 32px;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    top: 2px;
+    left: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+    /* img is smaller than background-color which cover the whole img */
+    background-image: url('./imgs/star.svg');
+
+}
+.fakeCheckBox{
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+    /* display: none; */
+    position: absolute;
+}
+/* it wouldn't effect the checkbox */
+/* .fakeCheckBox:checked + .slider-bar{background-color: green;} */
+.fakeCheckBox:checked + .slider-bar::before{
+    /* only can use the same property. For instance 'left' */
+    left: calc(32px - 6px);
+    /* right: 3px; */
+    /* 透明的背影，把黑背景变成透明 */
+    background-color: transparent;
+}
+.info-header-nav-badge-switch{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.info-header-nav-badge-switch-text{
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    /* border: 1px solid red; */
+    color: gray;
+}
+.info-header-nav-badge-switch-text > span{
+    width: 60px;
+    position: absolute;
+    text-align: center;
+}
+.switch-to-old{
+    visibility: visible;
+}
+.no-more-old{
+    visibility: hidden;
+}
+.info-header-nav-title{
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.info-header-text{
+    display: flex;
+    flex-direction: column;
+}
+.info-header-text-detail{
+    /* font-size: 6rem; */
+    font-size: 6vh;
+    font-weight: 200;
+    display: flex;
+    flex-direction: column;
+}
+.info-header-text-more{
+    position: relative;
+    /* border: 1px solid black; */
+    width: fit-content;
+    font-size: 1.1rem;
+    padding-right: 22px;
+    height: 24px;
+    overflow-x: hidden;
+}
+.info-header-text-more::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 1px;
+    transition: transform 0.3s ease;
+}
+.info-header-text-more:hover::before{
+    transform: translateX(100%);
+}
+.info-header-text-more::after{
+    content: "";
+    height: 12px;
+    width: 12px;
+    background-image: url(./imgs/arrow.svg);
+    position: absolute;
+    transform: translateX(10px) translateY(4px);
+}
+
+.info-header-imgs{
+    position: relative;
+    width: fit-content;
+}
+.info-header-imgs-box{
+    /* width: 600px;
+    height: 400px; */
+    height: 50vh;
+    width: 75vh;
+    /* background-color: lightgray; */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.info-header-imgs-box > img{
+    position: absolute;
+    /* width: 600px; */
+    width: 100%;
+    /* transform: translateY(-100px); */
+}
+.info-header-imgs-box > .header-img-show{
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.6s ease;
+}
+.info-header-imgs-box:hover > .header-img-show{
+    opacity: 0.6;
+}
+
+.info-header-imgs-rotate{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16.66%;
+    height: 16.66%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(50%) translateY(-50%);
+    
+}
+.info-header-imgs-rotate > img{
+    position: absolute;
+}
+.info-header-imgs-rotate-arrow{
+    width: 12.5%;
+    transform: rotate(135deg);
+}
+.info-header-imgs-rotate-circle{
+    width: 100%;
+    animation: circleRotation 10s infinite linear;
+}
+.info-header-imgs-rotate-circle:hover{
+    animation-play-state: paused;
+}
+@keyframes circleRotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+/* section two */
+.selected-works{
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    /* gap: 100px; */
+    gap: 8vh;
+}
+
+.selected-works-title{
+    font-size: 3vh;
+    font-weight: 100;
+}
+
+.works-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.one-work{
+    /* once this class appear, workNum will increase by 1 */
+    counter-increment: workNum;
+    /* border: 1px solid green; */
+    position: relative;
+
+    /* it will hid the img, so we don't use it on the img's parent */
+    /* overflow-x: hidden; */
+
+    /* change the children's state */
+    display: flex;
+}
+.one-work-text-box{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.one-work-title{
+    /* font-size: 4rem; */
+    font-size: 8vh;
+    font-weight: 200;
+    transition: opacity 0.2s ease;
+}
+.one-work-title::before{
+    content: "0"counter(workNum)" /";
+    font-size: 1.4rem;
+    font-weight: 100;
+    margin-right: 10px;
+}
+.one-work-title:hover{
+    opacity: 0;
+}
+.move-text{
+    position: absolute;
+    right: 0;
+    /* font-size: 4rem; */
+    font-size: 8vh;
+    /* 最小是父級寬，但可以比他大 */
+    width: fit-content;
+    min-width: 100%;
+    /* 不換行 */
+    white-space: nowrap;
+    font-weight: 100;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: textMoving 8s infinite linear;
+    animation-play-state: paused;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+@keyframes textMoving{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+.one-work-title:hover + .move-text{
+    animation-play-state: running;
+    opacity: 0.2;
+}
+.circle-img{
+    /* width: 200px;
+    height: 200px; */
+    width: 20vw;
+    height: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    /* top: -20px; */
+    pointer-events: none;
+    z-index: 10;
+}
+.circle-img > img{
+    width: 160%;
+}
+
+
+/* section three */
+.footer{
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    /* gap: 50px; */
+    gap: 4vh;
+}
+
+.footer-title{
+    /* font-size: 2rem; */
+    font-size: 3vh;
+    font-weight: 100;
+}
+
+.footer-info{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.footer-info-left{
+    display: flex;
+    flex-direction: column;
+}
+.footer-info-left-hover{
+    position: relative;
+    width: fit-content;
+    overflow-x: hidden;
+}
+.footer-info-left-hover::before{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+    transform: translate(-102%);
+    transition: transform 0.3s ease;
+}
+.footer-info-left-hover:hover::before{
+    transform: translate(0);
+}
+.footer-info-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+}
+.footer-info-right:hover video{
+    /* if you use opacity, it will play when you hover on the video even it is not visible.
+    Or you really  want to use opacity, you can use pointer-events: none */
+    visibility: visible;
+}
+.footer-info-right-icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('./icons/close.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.ticked .footer-info-right-icon{
+    background-image: url('./icons/play.svg');
+    
+}
+.footer-info-right-box{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.footer-info-right-box:first-child{
+    font-weight: 500;
+}
+.footer-info-right video{
+    position: absolute;
+    top: 0;
+    transform: translateY(-105%);
+    width: 300px;
+    visibility: hidden;
+}
+
+.footer-talk{
+    /* font-size: 6rem; */
+    font-size: 8vh;
+    font-weight: 100;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+.footer-talk::after{
+    content: "";
+    /* height: 70px;
+    width: 70px; */
+    height: 8vh;
+    width: 8vh;
+    background-image: url('./imgs/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-4px) translateY(4px);
+}
+.footer-talk:hover::after{
+    transform: translateX(0px) translateY(0px);
+}
+.footer-talk::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.5s ease;
+}
+.footer-talk:hover::before{
+    transform: translate(100%);
+}
+
+
+
+/* media query */
+/* 
+480px phone
+480px-1024px pad
+1024px pc
+*/
+/* 小於等於900px */
+@media (max-width: 900px){
+    canvas, .mousePoint, .circle-img, .footer-info-right:hover video{
+        display: none;
+    }
+
+    .container{
+        gap: 12vw;
+    }
+
+    .info-header{
+        width: 100%;
+    }
+
+    .info-header, .selected-works{
+        gap: 6vw;
+    }
+
+    .info-header-text-detail, .one-work-title, .move-text, .footer-talk{
+        font-size: 6vw;
+    }
+
+    .info-header-nav-badge-box > img{
+        width: 60px;
+    }
+    .selected-works-title, .footer-title{
+        font-size: 3vw;
+    }
+    .info-header-nav-badge-switch-text{
+        font-size: 0.6rem;
+    }
+
+    .info-header-imgs-box{
+        height: 50vw;
+        width: 75vw;
+    }
+
+    .footer{
+        gap: 4vw;
+    }
+
+    .footer-talk::after{
+        width: 6vw;
+        height: 6vw;
+    }
+}

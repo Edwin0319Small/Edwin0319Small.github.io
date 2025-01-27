@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static JSON</title>
     <link rel="stylesheet" href="./main.css">
 </head>
+
 <body>
     <div class="container">
         <div class="topic">
@@ -13,38 +15,39 @@
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident architecto quasi</span>
         </div>
         <div class="choice">
-            <div>
+            <div class="option">
                 <span>A.</span>
                 <span></span>
                 <span></span>
             </div>
-            <div>
+            <div class="option">
                 <span>B.</span>
                 <span></span>
                 <span></span>
             </div>
-            <div>
+            <div class="option">
                 <span>C.</span>
                 <span></span>
                 <span></span>
             </div>
-            <div>
+            <div class="option">
                 <span>D.</span>
                 <span></span>
                 <span></span>
             </div>
         </div>
         <div class="topic_choice">
-            <button id="next">下一題</button>
+            <button id="next" class="animated-button">下一題</button>
             <span>0/0</span>
         </div>
         <div class="init">
             <input type="text" placeholder="題目開始序數">
             <input type="text" placeholder="題目結束序數">
-            <button>確定</button>
+            <button class="animated-button">確定</button>
             <span>開始請大於等於1，結束請小於等於400，題目至少四題。</span>
         </div>
     </div>
 </body>
 <script src="main.js"></script>
+
 </html>

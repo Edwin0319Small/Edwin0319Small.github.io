@@ -1,0 +1,259 @@
+*{
+    /* erase mouse */
+    cursor: none;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    --color: #dcff7d;
+    /* a標籤跳轉時的過程 */
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* loading */
+.loading-block{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* delay 1.5s to show the loading animation */
+    transition: transform 0.2s cubic-bezier(.77, 0, .175, 1) 1.5s;
+}
+.upperone{
+    background-color: white;
+    z-index: 110;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 100;
+}
+.downone{
+    background-color: var(--color);
+    z-index: 109;
+    transition-delay: 1.8s;
+}
+.loading-block-moveup{
+    transform: translateY(-100%);
+}
+.init-Ref{
+    opacity: 0;
+}
+
+/* relating to mouse style */
+/* avoid paint changing shape */
+canvas[resize]{
+    height: 100%;
+    width: 100%;
+    /* border: 10px solid red; */
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* cursor only can occur one element event, and this attribute avoid occur the closest element like this */
+    pointer-events: none;
+}
+
+.mousePoint{
+    height: 6px;
+    width: 6px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: 101;
+    pointer-events: none;
+}
+
+
+
+body{
+    padding: 2rem;
+    /* overflow-x: hidden; */
+    transition: background-color 0.3s ease;
+  }
+  
+  .block{
+    height: 100vh;
+    flex-shrink: 0; 
+    /* border: 1px solid red; */
+  }
+  
+  body.black{
+    background-color: black;
+  }
+  
+  .one-block{
+    flex-shrink: 0; 
+  }
+  
+  .red{
+    background-color: red;
+  }
+  .blue{
+    background-color: blue;
+  }
+  .green{
+    background-color: green;
+  }
+  .yellow{
+    background-color: yellow;
+    width: 100vw; ;
+  }
+  .footer-bar{
+    background-color: aqua;
+    height: 20vh;
+  }
+  
+  
+  .scroll-content{
+    display: flex;
+    /* border: 2px solid green; */
+  }
+  
+  .title-box{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .works-title{
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-weight: 200;
+  }
+  
+  a.back-link{
+    text-decoration: none;
+    color:black;
+    position: relative;
+    width: max-content;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    overflow-x: hidden;
+  
+  }
+  
+  .back-link::before{
+    width: 100%;
+    height: 2px;
+    background: black;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0vw;
+    transition: 0.4s ease-out;
+    
+  }
+  
+  .back-link:hover::before{
+    transform: translateX(105%);
+  }
+  
+  .back-link::after{
+    width: 12px;
+    height: 12px;
+    content: "";
+    background-image: url('../src/imgs/arrow.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    bottom: 6px;
+    transform: rotate(-90deg);
+    transition: 0.4s ease-out;
+  }
+  .project-cards-block{
+    display: flex;
+    padding-left: 20%;
+    align-items: center;
+    gap: 100px;
+  }
+  .project-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .project-card-title{
+    font-size: 2rem;
+    width: 300px;
+    /* display: block; */
+  }
+  .project-info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .info-row{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(180, 180, 180);
+    padding-bottom: 4px;
+  }
+  .project-info .info-name{
+    font-weight: 100;
+  }
+  .project-info .info-detail{
+    font-weight: 900;
+  }
+  .font-transform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    font-size: 30rem;
+    /* border: 1px solid red; */
+    padding-left: 300px;
+    padding-right: 100px;
+  }
+  .font-photo{
+    transform: translateY(15%);
+  }
+  .font-graphy{
+    transform: translateY(-15%);
+  }
+  .imgs-container{
+    display: flex;
+    gap:100px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.display-none{
+    display: none;
+}
+  
+
+@media (max-width: 480px){
+    canvas, .mousePoint{
+        display: none;
+    }
+
+    .block{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .works-title{
+        font-size: 30px;
+    }
+    
+    .scroll-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .font-transform{
+        font-size: 3rem;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+}
